@@ -12,8 +12,10 @@
 
     $voiture->boost();
 
-    echo "<p>La ".$voiture->getNom()." roule maintenant à ".$voiture->getVitesse().".</p>";
+    echo "<p>La ".$voiture->getNom()." roule maintenant à ".$voiture->getVitesse()."km/h.</p>";
 
     echo $voiture->plusRapide($moto);
+    echo "<br>";
+    echo Vehicule::plusRapide2($voiture, $moto);
 ?>
 

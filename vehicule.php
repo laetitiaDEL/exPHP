@@ -50,19 +50,27 @@
         }
 
         public function boost(){
-            $this->setVitesse(($this->vitesse)+50);
+            $this->vitesse += 50;
         }
 
         public function plusRapide($compare){
-            if($this->vitesse > $compare->vitesse){
+            if($this->vitesse > $compare->getVitesse()){
                 return "La ".$this->nom." est plus rapide.";
-            }else if($compare->vitesse > $this->vitesse){
-                return "La ".$compare->nom." est plus rapide.";
+            }else if($compare->getVitesse() > $this->vitesse){
+                return "La ".$compare->getNom()." est plus rapide.";
             }else {
                 return "Les deux véhicules roulent à la même vitesse.";
             }
         }
 
+        public static function plusRapide2($obj1, $obj2){
+            if($obj1->vitesse > $obj2->vitesse){
+                return "La ".$obj1->nom." est plus rapide.";
+            }else if($obj2->vitesse > $obj1->vitesse){
+                return "La ".$obj2->nom." est plus rapide.";
+            }else{
+                return "Les deux véhicules roulent à la même vitesse.";
+            }
+        }
     }
-
 ?>
